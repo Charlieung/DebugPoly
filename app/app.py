@@ -10,7 +10,7 @@ CORS(app)
 def hello():
     return "hello world"
 
-@app.route("/v1/bias/<url>")
+@app.route("/v1/bias/")
 def bias(url):
     return str(random(), request.data)
 
