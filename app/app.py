@@ -3,6 +3,10 @@ from flask import Flask
 
 app = Flask(__name__)
 
+@app.route("/")
+def hello():
+    return "hello world"
+
 @app.route("/v1/bias/<url>")
 def bias(url):
     return str(random())
