@@ -11,7 +11,6 @@ MarkupSafe==0.23
 mistune==0.7.3
 nbconvert==4.2.0
 nbformat==4.2.0
-nbpresent==3.0.2
 newspaper3k==0.1.9
 nltk==3.2.2
 notebook==4.3.1
