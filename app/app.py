@@ -1,3 +1,4 @@
+from flask import request
 from random import random
 from flask import Flask
 from flask_cors import CORS
@@ -11,7 +12,7 @@ def hello():
 
 @app.route("/v1/bias/<url>")
 def bias(url):
-    return str(random())
+    return str(random(), request.data)
 
 if __name__ == "__main__":
     app.run()
