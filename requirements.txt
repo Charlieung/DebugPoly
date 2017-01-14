@@ -1,0 +1,7 @@
+beautifulsoup4==4.3.2
+cssselect==0.9.1
+nltk==3.2.2
+Pillow==2.5.1
+PyYAML==3.11
+scikit-learn==0.18.1
+six==1.10.0
