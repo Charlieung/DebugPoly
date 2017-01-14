@@ -39,7 +39,7 @@ def bias():
     #return str(random())
     url = request.args.get('url')
     article_text = get_article_text(url)
-    score = text_clf.predict(article_text)
+    score = text_clf.predict_proba([article_text])
     return str(score)
 
 if __name__ == "__main__":
