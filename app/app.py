@@ -10,7 +10,7 @@ from sklearn.externals import joblib
 app = Flask(__name__)
 CORS(app)
 
-text_clf = joblib.load('./text_clf.pkl')
+text_clf = joblib.load('app/text_clf.pkl')
 
 # @app.before_first_request
 # def load_model():
