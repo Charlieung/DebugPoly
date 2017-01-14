@@ -11,7 +11,7 @@ def hello():
     return "hello world"
 
 @app.route("/v1/bias/")
-def bias(url):
+def bias():
     return str(random(), request.data)
 
 if __name__ == "__main__":
