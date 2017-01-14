@@ -12,7 +12,9 @@ def hello():
 
 @app.route("/v1/bias/")
 def bias():
-    return str(random(), request.data)
+    #return str(random())
+    return str(request.data)
+
 
 if __name__ == "__main__":
     app.run()
