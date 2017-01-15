@@ -41,7 +41,7 @@ def bias():
     article_text = get_article_text(url)
     print(article_text)
     score = text_clf.predict_proba([article_text])
-    return str(score[0])
+    return str(score[0][0])
 
 if __name__ == "__main__":
     app.run()
