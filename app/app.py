@@ -40,9 +40,9 @@ def bias():
     url = request.args.get('url')
     article = get_article(url)
     # print(article_text)
-    score = text_clf.predict([article.text])
+    score = text_clf.predict_proba([article.text])
     response = {
-        "score": str(score[0]),
+        "score": str(score[0][0]),
         "title": article.title,
         "authors": article.authors,
         "date": article.publish_date.isoformat()[:10]
