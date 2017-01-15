@@ -1,4 +1,4 @@
-from flask import request
+from flask import request, jsonify
 from random import random
 from flask import Flask
 from flask_cors import CORS
@@ -22,11 +22,11 @@ def hello():
     return "hello world"
 
 
-def get_article_text(url):
+def get_article(url):
     article = Article(url, language='en')
     article.download()
     article.parse()
-    return article.text
+    return article
 
     # return {
     #     "title": article.title,
@@ -38,10 +38,16 @@ def get_article_text(url):
 def bias():
     #return str(random())
     url = request.args.get('url')
-    article_text = get_article_text(url)
+    article = get_article(url)
     # print(article_text)
-    score = text_clf.predict_proba([article_text])
-    return str(score[0][0])
+    score = text_clf.predict_proba([article.text])
+    response = {
+        "score": str(score[0][0]),
+        "title": article.title,
+        "authors": article.authors,
+        "date": article.publish_date.isoformat()[:10]
+    }
+    return jsonify(**response)
 
 if __name__ == "__main__":
     app.run()
