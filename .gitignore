@@ -2,6 +2,7 @@
 .ipynb_checkpoints/
 .idea/*
 scrape/__pycache__
+scrape/dataset*
 venv
 DebugPoly_Train/text_clf.pkl_*
 DebugPoly_Train/.ipynb_checkpoints
