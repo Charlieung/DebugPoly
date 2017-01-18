@@ -25,9 +25,9 @@ def extract_actual_article_url(article_soup):
     return article_soup.find_all('div', 'article-link-hidden')[0].get_text().strip()
 
 
+# TODO: record how entry fails
 def extract_article(url):
     try:
-        # print(url)
         soup = url_to_soup(url)
         bias_div = soup.find(id=BIAS_DIV_ID)
         bias_text = bias_div.img["title"]
@@ -39,6 +39,7 @@ def extract_article(url):
         article.nlp()
         return {
             "title": article.title,
+            "url": article_url,
             "text": article.text,
             "bias": bias_text,
             "source": source,
